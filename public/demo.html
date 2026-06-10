@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Densmore Insurance – Widget Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; color: #1e293b; }
+
+    /* Fake website nav */
+    nav {
+      background: #1a3c6b;
+      color: #fff;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .logo { font-size: 18px; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; }
+    nav ul a:hover { color: #fff; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a3c6b 0%, #2563a8 60%, #3b82f6 100%);
+      color: #fff;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+    .hero p  { font-size: 18px; opacity: 0.88; max-width: 520px; margin: 0 auto 32px; }
+    .hero .cta {
+      background: #fff;
+      color: #1a3c6b;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* Content */
+    .content { max-width: 960px; margin: 60px auto; padding: 0 24px; }
+    .content h2 { font-size: 26px; margin-bottom: 16px; color: #1a3c6b; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px; }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-top: 3px solid #2563a8;
+    }
+    .card .icon { font-size: 28px; margin-bottom: 10px; }
+    .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .card p  { font-size: 13px; color: #64748b; line-height: 1.55; }
+
+    /* Embed code block */
+    .embed-box {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 40px 0 60px;
+    }
+    .embed-box h3 { color: #94a3b8; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .embed-box pre {
+      color: #e2e8f0;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .embed-box .tag  { color: #7dd3fc; }
+    .embed-box .attr { color: #86efac; }
+    .embed-box .val  { color: #fde68a; }
+    .embed-box .cmt  { color: #64748b; }
+
+    footer {
+      background: #1a3c6b;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Fake website nav -->
+<nav>
+  <div class="logo">🛡️ Densmore Insurance</div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Personal</a></li>
+    <li><a href="#">Business</a></li>
+    <li><a href="#">Farm</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Protecting Iowa Families<br>Since 2005</h1>
+  <p>Independent insurance agency serving Iowa and beyond. We find you the best coverage at the best price.</p>
+  <a href="#" class="cta">Get a Free Quote</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <h2>Our Coverage Options</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3>Personal Insurance</h3>
+      <p>Home, auto, renters, condo, flood, umbrella, and more for Iowa families.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💼</div>
+      <h3>Business Insurance</h3>
+      <p>General liability, commercial property, workers comp, cyber, and BOP policies.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🐎</div>
+      <h3>Equine & Farm</h3>
+      <p>Specialized coverage for horses, livestock, farm equipment, and rural properties.</p>
+    </div>
+  </div>
+
+  <!-- How to embed -->
+  <h2>Embed This Widget on Any Page</h2>
+  <p style="color:#64748b; margin-bottom:20px; font-size:14px;">
+    Add just two lines to any HTML page. The chat bubble will appear in the bottom-right corner.
+  </p>
+
+  <div class="embed-box">
+    <h3>Copy &amp; Paste into your &lt;head&gt; and before &lt;/body&gt;</h3>
+    <pre><span class="cmt">&lt;!-- Step 1: Add CSS in &lt;head&gt; --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"http://localhost:3000/widget/iife.css"</span><span class="tag">&gt;</span>
+
+<span class="cmt">&lt;!-- Step 2 (optional): Custom config --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+  window.DensmoreChatConfig = {
+    apiBase: <span class="val">'http://localhost:3000'</span>,  <span class="cmt">// your server URL</span>
+    title:   <span class="val">'Insurance Assistant'</span>,
+    subtitle:<span class="val">'Ask me anything'</span>,
+  };
+<span class="tag">&lt;/script&gt;</span>
+
+<span class="cmt">&lt;!-- Step 3: Add JS before &lt;/body&gt; --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"http://localhost:3000/widget/iife.js"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+  </div>
+</div>
+
+<footer>
+  © 2026 Densmore Insurance Strategies, Inc. &nbsp;·&nbsp; 85 Paine St SE, Bondurant, Iowa &nbsp;·&nbsp; (515) 967-3390
+</footer>
+
+<!-- =============================================
+     THE WIDGET — just these 2 lines needed!
+     ============================================= -->
+<link rel="stylesheet" href="/widget/iife.css">
+<script src="/widget/iife.js"></script>
+
+</body>
+</html>
